@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #1A1A1A;
+  background: #FFFFFF;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar (desktop) ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F0E060; }
+::-webkit-scrollbar-thumb { background: #D62B2B; border-radius: 99px; }
+
+/* ── Selection color ── */
+::selection { background: #D62B2B22; }
+
+/* ── TikTok iframe fix ── */
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+/* ── Prevent layout shift on font load ── */
+.font-nunito  { font-family: 'Nunito', sans-serif; }
+.font-brush   { font-family: 'Ma Shan Zheng', serif; }
+
+/* ── Smooth section transitions ── */
+section { will-change: auto; }
