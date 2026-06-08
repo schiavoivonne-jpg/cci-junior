@@ -229,7 +229,7 @@ function FadeIn({ children, delay = 0, className = '', up = true }) {
    COMPONENTE: NAVEGACIÓN
 ═══════════════════════════════════════════════════════════════ */
 const NAV_LINKS = [
-  { label: '你好!',     href: '#hero'     },
+  { label: '¡Ni hao!', href: '#hero'     },
   { label: 'Métricas', href: '#metricas'  },
   { label: 'Roadmap',  href: '#roadmap'   },
   { label: 'Contacto', href: '#contacto'  },
