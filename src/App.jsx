@@ -412,7 +412,7 @@ function Hero() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
           <span style={{
             fontFamily: "'Poppins', sans-serif",
-            fontWeight: 700,
+            fontWeight: 400,
             fontSize: 'clamp(1.8rem, 7vw, 2.4rem)',
             color: '#D62B2B',
             lineHeight: 1,
@@ -451,7 +451,7 @@ function Hero() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
           <span style={{
             fontFamily: "'Poppins', sans-serif",
-            fontWeight: 700,
+            fontWeight: 400,
             fontSize: 'clamp(1.8rem, 7vw, 2.4rem)',
             color: '#D62B2B',
             lineHeight: 1,
