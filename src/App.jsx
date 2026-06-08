@@ -402,108 +402,134 @@ function Hero() {
       <div
         style={{
           position: 'relative', zIndex: 2,
-          maxWidth: '480px', margin: '0 auto',
+          width: '100%',
+          maxWidth: '400px',
+          margin: '0 auto',
           padding: '3rem 2rem',
-          textAlign: 'left',
         }}
       >
-        {/* Línea 1: "El" */}
-        <p style={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 700,
-          fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
-          color: '#D62B2B',
-          marginBottom: '0.4rem',
-          lineHeight: 1,
-        }}>
-          El
-        </p>
-
-        {/* Pill roja: "chino mandarín" */}
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          background: '#D62B2B',
-          borderRadius: '999px',
-          padding: '0.55rem 1.4rem',
-          marginBottom: '0.5rem',
-          position: 'relative',
-        }}>
-          {/* Bolita decorativa arriba */}
-          <div style={{
-            position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)',
-            width: '18px', height: '18px', borderRadius: '50%', background: '#D62B2B',
-          }}/>
+        {/* FILA 1: "El" + pill "chino mandarín" en la misma línea */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
           <span style={{
             fontFamily: "'Poppins', sans-serif",
-            fontWeight: 900,
-            fontSize: 'clamp(1.4rem, 5.5vw, 2rem)',
-            color: '#F5C518',
-            letterSpacing: '-0.5px',
+            fontWeight: 700,
+            fontSize: 'clamp(1.8rem, 7vw, 2.4rem)',
+            color: '#D62B2B',
+            lineHeight: 1,
+            flexShrink: 0,
           }}>
-            chino mandarín
+            El
           </span>
+
+          {/* Pill roja */}
+          <div style={{
+            position: 'relative',
+            background: '#D62B2B',
+            borderRadius: '999px',
+            padding: '0.5rem 1.3rem',
+            display: 'inline-flex',
+            alignItems: 'center',
+          }}>
+            {/* Bolita arriba centrada */}
+            <div style={{
+              position: 'absolute', top: '-11px', left: '50%', transform: 'translateX(-50%)',
+              width: '20px', height: '20px', borderRadius: '50%', background: '#D62B2B',
+            }}/>
+            <span style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 900,
+              fontSize: 'clamp(1.2rem, 5vw, 1.7rem)',
+              color: '#F5C518',
+              whiteSpace: 'nowrap',
+            }}>
+              chino mandarín
+            </span>
+          </div>
         </div>
 
-        {/* Línea 2: "es un" */}
-        <p style={{
-          fontFamily: "'Poppins', sans-serif",
-          fontWeight: 700,
-          fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
-          color: '#D62B2B',
-          margin: '0.4rem 0',
-          lineHeight: 1,
-          textAlign: 'right',
-        }}>
-          es un
-        </p>
-
-        {/* Card amarilla: "JUEGO de NIÑOS" con carita */}
-        <div style={{
-          display: 'inline-flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          background: '#F5C518',
-          borderRadius: '1.5rem',
-          padding: '1rem 1.6rem 0.8rem',
-          float: 'right',
-          position: 'relative',
-        }}>
-          {/* Bolita decorativa arriba izquierda */}
-          <div style={{
-            position: 'absolute', top: '-12px', left: '18px',
-            width: '22px', height: '22px', borderRadius: '50%', background: '#F5C518',
-          }}/>
-          <div style={{
+        {/* FILA 2: "es un" alineado a la derecha + card amarilla debajo */}
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
+          <span style={{
             fontFamily: "'Poppins', sans-serif",
-            fontWeight: 900,
-            fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
+            fontWeight: 700,
+            fontSize: 'clamp(1.8rem, 7vw, 2.4rem)',
             color: '#D62B2B',
-            lineHeight: 1.1,
-            textAlign: 'center',
+            lineHeight: 1,
+            marginBottom: '8px',
+            paddingRight: '12px',
           }}>
-            <span>JUEGO</span>{' '}
-            <span style={{ fontWeight: 600, fontSize: '0.65em', color: '#D62B2B' }}>de</span>
-            <br />
-            <span>NIÑOS</span>
-          </div>
-          {/* Carita */}
-          <div style={{ display: 'flex', gap: '10px', marginTop: '6px', alignItems: 'center' }}>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              {/* Ojo izquierdo */}
-              <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#1A1A1A' }}/>
+            es un
+          </span>
+
+          {/* Card amarilla */}
+          <div style={{
+            position: 'relative',
+            background: '#F5C518',
+            borderRadius: '1.6rem',
+            padding: '1.1rem 1.8rem 1rem',
+            display: 'inline-flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}>
+            {/* Bump izquierdo (círculo exterior) */}
+            <div style={{
+              position: 'absolute',
+              left: '-14px',
+              top: '50%',
+              transform: 'translateY(-50%)',
+              width: '28px', height: '28px',
+              borderRadius: '50%',
+              background: '#F5C518',
+            }}/>
+
+            {/* Texto JUEGO de NIÑOS */}
+            <div style={{ textAlign: 'center', lineHeight: 1.15 }}>
+              <span style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 900,
+                fontSize: 'clamp(1.7rem, 6.5vw, 2.3rem)',
+                color: '#D62B2B',
+              }}>JUEGO </span>
+              <span style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 600,
+                fontSize: 'clamp(0.9rem, 3.5vw, 1.2rem)',
+                color: '#D62B2B',
+              }}>de</span>
+              <br />
+              <span style={{
+                fontFamily: "'Poppins', sans-serif",
+                fontWeight: 900,
+                fontSize: 'clamp(1.7rem, 6.5vw, 2.3rem)',
+                color: '#D62B2B',
+              }}>NIÑOS</span>
+            </div>
+
+            {/* Carita */}
+            <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px' }}>
+              {/* Ojos */}
+              <div style={{ display: 'flex', gap: '14px' }}>
+                <div style={{
+                  width: '26px', height: '26px', borderRadius: '50%',
+                  background: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#1A1A1A' }}/>
+                </div>
+                <div style={{
+                  width: '26px', height: '26px', borderRadius: '50%',
+                  background: '#fff',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}>
+                  <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#1A1A1A' }}/>
+                </div>
               </div>
-              {/* Ojo derecho */}
-              <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#1A1A1A' }}/>
-              </div>
+              {/* Sonrisa */}
+              <svg width="40" height="16" viewBox="0 0 40 16">
+                <path d="M5 5 Q20 16 35 5" fill="none" stroke="#1A1A1A" strokeWidth="2.5" strokeLinecap="round"/>
+              </svg>
             </div>
           </div>
-          {/* Sonrisa */}
-          <svg width="36" height="14" viewBox="0 0 36 14" style={{ marginTop: '2px' }}>
-            <path d="M4 4 Q18 14 32 4" fill="none" stroke="#1A1A1A" strokeWidth="2.5" strokeLinecap="round"/>
-          </svg>
         </div>
 
         {/* Clear float */}
