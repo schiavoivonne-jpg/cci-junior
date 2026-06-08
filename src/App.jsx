@@ -394,145 +394,120 @@ function Hero() {
         minHeight: '100svh',
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Decoraciones de fondo */}
-      <LanternSVG
-        opacity={0.18}
-        className="absolute"
-        style={{ width: 90, top: 60, right: -10, pointerEvents: 'none' }}
-      />
-      <LanternSVG
-        opacity={0.10}
-        className="absolute"
-        style={{ width: 55, top: 180, right: 90, pointerEvents: 'none' }}
-      />
-      <BrushChar
-        char="好"
-        className="absolute"
-        style={{ width: 180, bottom: 20, left: -20, pointerEvents: 'none' }}
-        opacity={0.09}
-      />
-      <BrushChar
-        char="学"
-        className="absolute"
-        style={{ width: 110, top: 70, left: 10, pointerEvents: 'none' }}
-        opacity={0.07}
-      />
-      <LuckyCloudSVG
-        className="absolute"
-        style={{ width: 260, bottom: 0, right: 0, pointerEvents: 'none' }}
-      />
-
-      {/* Contenido */}
       <div
         style={{
           position: 'relative', zIndex: 2,
-          maxWidth: '640px', margin: '0 auto',
-          padding: '3.5rem 1.5rem',
-          textAlign: 'center',
+          maxWidth: '480px', margin: '0 auto',
+          padding: '3rem 2rem',
+          textAlign: 'left',
         }}
       >
-        {/* Chip superior */}
-        <div
-          style={{
-            display: 'inline-block',
-            background: '#fff',
-            borderRadius: '999px',
-            padding: '5px 18px',
-            marginBottom: '1.5rem',
-            boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
-          }}
-        >
-          <span
-            style={{
-              fontFamily: "'Poppins', sans-serif", fontWeight: 800,
-              fontSize: '0.82rem', color: '#D62B2B', letterSpacing: '0.3px',
-            }}
-          >
-            🎋 Instituto virtual de chino mandarín
+        {/* Línea 1: "El" */}
+        <p style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontWeight: 700,
+          fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
+          color: '#D62B2B',
+          marginBottom: '0.4rem',
+          lineHeight: 1,
+        }}>
+          El
+        </p>
+
+        {/* Pill roja: "chino mandarín" */}
+        <div style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          background: '#D62B2B',
+          borderRadius: '999px',
+          padding: '0.55rem 1.4rem',
+          marginBottom: '0.5rem',
+          position: 'relative',
+        }}>
+          {/* Bolita decorativa arriba */}
+          <div style={{
+            position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)',
+            width: '18px', height: '18px', borderRadius: '50%', background: '#D62B2B',
+          }}/>
+          <span style={{
+            fontFamily: "'Poppins', sans-serif",
+            fontWeight: 900,
+            fontSize: 'clamp(1.4rem, 5.5vw, 2rem)',
+            color: '#F5C518',
+            letterSpacing: '-0.5px',
+          }}>
+            chino mandarín
           </span>
         </div>
 
-        {/* Headline */}
-        <h1
-          style={{
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: 900,
-            fontSize: 'clamp(2.4rem, 9vw, 4.2rem)',
-            color: '#1A1A1A',
-            lineHeight: 1.08,
-            letterSpacing: '-1.5px',
-            marginBottom: '1.2rem',
-          }}
-        >
-          Aprendé chino<br />
-          <span style={{ color: '#D62B2B' }}>mandarín</span>
-          <br />desde cero
-        </h1>
-
-        {/* Subtítulo */}
-        <p
-          style={{
-            fontFamily: "'Poppins', sans-serif",
-            fontSize: 'clamp(1rem, 3.5vw, 1.15rem)',
-            color: '#444',
-            fontWeight: 600,
-            lineHeight: 1.65,
-            maxWidth: '420px',
-            margin: '0 auto 2.2rem',
-          }}
-        >
-          Clases virtuales con metodología lúdica para chicos.
-          Un proyecto con propósito, cultura y mucho{' '}
-          <span style={{ fontFamily: "'Ma Shan Zheng', serif", color: '#D62B2B', fontSize: '1.1em' }}>你好</span>.
+        {/* Línea 2: "es un" */}
+        <p style={{
+          fontFamily: "'Poppins', sans-serif",
+          fontWeight: 700,
+          fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
+          color: '#D62B2B',
+          margin: '0.4rem 0',
+          lineHeight: 1,
+          textAlign: 'right',
+        }}>
+          es un
         </p>
 
-        {/* CTA */}
-        <a
-          href="#roadmap"
-          onClick={go}
-          style={{
-            display: 'inline-block',
-            background: '#D62B2B',
-            color: '#fff',
+        {/* Card amarilla: "JUEGO de NIÑOS" con carita */}
+        <div style={{
+          display: 'inline-flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          background: '#F5C518',
+          borderRadius: '1.5rem',
+          padding: '1rem 1.6rem 0.8rem',
+          float: 'right',
+          position: 'relative',
+        }}>
+          {/* Bolita decorativa arriba izquierda */}
+          <div style={{
+            position: 'absolute', top: '-12px', left: '18px',
+            width: '22px', height: '22px', borderRadius: '50%', background: '#F5C518',
+          }}/>
+          <div style={{
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 900,
-            fontSize: 'clamp(1rem, 3.5vw, 1.15rem)',
-            padding: '1rem 2.2rem',
-            borderRadius: '999px',
-            textDecoration: 'none',
-            boxShadow: '0 6px 22px rgba(214,43,43,0.35)',
-            transition: 'transform 0.18s, box-shadow 0.18s',
-            letterSpacing: '0.2px',
-          }}
-          onMouseOver={e => {
-            e.currentTarget.style.transform = 'scale(1.04)'
-            e.currentTarget.style.boxShadow = '0 8px 28px rgba(214,43,43,0.45)'
-          }}
-          onMouseOut={e => {
-            e.currentTarget.style.transform = 'scale(1)'
-            e.currentTarget.style.boxShadow = '0 6px 22px rgba(214,43,43,0.35)'
-          }}
-        >
-          Conocé el proyecto →
-        </a>
-
-        {/* Acento chino decorativo */}
-        <div
-          style={{
-            fontFamily: "'Ma Shan Zheng', serif",
-            fontSize: '0.95rem',
+            fontSize: 'clamp(1.6rem, 6vw, 2.2rem)',
             color: '#D62B2B',
-            opacity: 0.5,
-            marginTop: '2rem',
-            letterSpacing: '6px',
-          }}
-        >
-          中文 · 文化 · 教育
+            lineHeight: 1.1,
+            textAlign: 'center',
+          }}>
+            <span>JUEGO</span>{' '}
+            <span style={{ fontWeight: 600, fontSize: '0.65em', color: '#D62B2B' }}>de</span>
+            <br />
+            <span>NIÑOS</span>
+          </div>
+          {/* Carita */}
+          <div style={{ display: 'flex', gap: '10px', marginTop: '6px', alignItems: 'center' }}>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              {/* Ojo izquierdo */}
+              <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#1A1A1A' }}/>
+              </div>
+              {/* Ojo derecho */}
+              <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#1A1A1A' }}/>
+              </div>
+            </div>
+          </div>
+          {/* Sonrisa */}
+          <svg width="36" height="14" viewBox="0 0 36 14" style={{ marginTop: '2px' }}>
+            <path d="M4 4 Q18 14 32 4" fill="none" stroke="#1A1A1A" strokeWidth="2.5" strokeLinecap="round"/>
+          </svg>
         </div>
+
+        {/* Clear float */}
+        <div style={{ clear: 'both' }} />
       </div>
     </section>
   )

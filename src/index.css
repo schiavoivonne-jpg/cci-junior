@@ -20,10 +20,10 @@ body {
   background-color: #FDFDE8;
   background-image: repeating-linear-gradient(
     90deg,
-    #FFFFF5 0px,
-    #FFFFF5 70px,
-    #F0ECC0 70px,
-    #F0ECC0 140px
+    #FEFEFD 0px,
+    #FEFEFD 32px,
+    #F0ECC0 32px,
+    #F0ECC0 64px
   );
   background-attachment: fixed;
   overflow-x: hidden;
