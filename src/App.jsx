@@ -271,13 +271,13 @@ function Nav() {
         <a
           href="#hero"
           onClick={e => go(e, '#hero')}
-          style={{
-            fontFamily: "'Nunito', sans-serif", fontWeight: 900,
-            fontSize: '1.35rem', color: '#FFFFFF', textDecoration: 'none',
-            letterSpacing: '-0.5px',
-          }}
+          style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}
         >
-          CCI <span style={{ color: '#F5C518' }}>Junior</span>
+          <img
+            src="/logo.png"
+            alt="CCI Junior"
+            style={{ height: '38px', width: 'auto', objectFit: 'contain' }}
+          />
         </a>
 
         {/* Links desktop */}
@@ -293,7 +293,7 @@ function Nav() {
                 href={l.href}
                 onClick={e => go(e, l.href)}
                 style={{
-                  fontFamily: "'Nunito', sans-serif", fontWeight: 800,
+                  fontFamily: "'Poppins', sans-serif", fontWeight: 800,
                   fontSize: '0.9rem', color: '#fff', textDecoration: 'none',
                   transition: 'color 0.2s',
                 }}
@@ -353,7 +353,7 @@ function Nav() {
                 onClick={e => go(e, l.href)}
                 style={{
                   display: 'block', padding: '0.75rem 0',
-                  fontFamily: "'Nunito', sans-serif", fontWeight: 800,
+                  fontFamily: "'Poppins', sans-serif", fontWeight: 800,
                   fontSize: '1.05rem', color: '#fff', textDecoration: 'none',
                   transition: 'color 0.2s',
                   animationDelay: `${i * 40}ms`,
@@ -448,7 +448,7 @@ function Hero() {
         >
           <span
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 800,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 800,
               fontSize: '0.82rem', color: '#D62B2B', letterSpacing: '0.3px',
             }}
           >
@@ -459,7 +459,7 @@ function Hero() {
         {/* Headline */}
         <h1
           style={{
-            fontFamily: "'Nunito', sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontWeight: 900,
             fontSize: 'clamp(2.4rem, 9vw, 4.2rem)',
             color: '#1A1A1A',
@@ -476,7 +476,7 @@ function Hero() {
         {/* Subtítulo */}
         <p
           style={{
-            fontFamily: "'Nunito', sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontSize: 'clamp(1rem, 3.5vw, 1.15rem)',
             color: '#444',
             fontWeight: 600,
@@ -498,7 +498,7 @@ function Hero() {
             display: 'inline-block',
             background: '#D62B2B',
             color: '#fff',
-            fontFamily: "'Nunito', sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontWeight: 900,
             fontSize: 'clamp(1rem, 3.5vw, 1.15rem)',
             padding: '1rem 2.2rem',
@@ -578,13 +578,13 @@ function SobreIvi() {
                 <circle cx="56" cy="44" r="22" fill="#D62B2B" opacity="0.6" />
                 <ellipse cx="56" cy="90" rx="30" ry="20" fill="#D62B2B" opacity="0.4" />
                 <text x="56" y="50" textAnchor="middle" fontSize="22" fontWeight="900"
-                  fontFamily="'Nunito', sans-serif" fill="#fff">Ivi</text>
+                  fontFamily="'Poppins', sans-serif" fill="#fff">Ivi</text>
               </svg>
             </div>
 
             <h2
               style={{
-                fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+                fontFamily: "'Poppins', sans-serif", fontWeight: 900,
                 fontSize: '1.9rem', color: '#1A1A1A', marginBottom: '0.2rem',
               }}
             >
@@ -602,7 +602,7 @@ function SobreIvi() {
 
             <p
               style={{
-                fontFamily: "'Nunito', sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 color: '#555', fontSize: '1rem', lineHeight: 1.75,
                 marginBottom: '1.8rem',
               }}
@@ -620,7 +620,7 @@ function SobreIvi() {
                   key={b.label}
                   style={{
                     background: b.bg, color: b.fg,
-                    fontFamily: "'Nunito', sans-serif", fontWeight: 800,
+                    fontFamily: "'Poppins', sans-serif", fontWeight: 800,
                     fontSize: '0.85rem', padding: '6px 18px',
                     borderRadius: '999px',
                   }}
@@ -646,7 +646,7 @@ function TikTokVideos() {
         <FadeIn>
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 900,
               fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', color: '#1A1A1A',
               textAlign: 'center', marginBottom: '0.4rem',
             }}
@@ -655,7 +655,7 @@ function TikTokVideos() {
           </h2>
           <p
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 700,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
               fontSize: '1rem', color: '#555',
               textAlign: 'center', marginBottom: '2.5rem',
             }}
@@ -709,7 +709,7 @@ function TikTokVideos() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 background: '#1A1A1A', color: '#fff',
-                fontFamily: "'Nunito', sans-serif", fontWeight: 900, fontSize: '1rem',
+                fontFamily: "'Poppins', sans-serif", fontWeight: 900, fontSize: '1rem',
                 padding: '0.85rem 2rem', borderRadius: '999px',
                 textDecoration: 'none',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.2)',
@@ -753,7 +753,7 @@ function CounterCard({ icon, value, display, label, active }) {
       <div style={{ fontSize: '2.2rem', marginBottom: '0.5rem' }}>{icon}</div>
       <div
         style={{
-          fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+          fontFamily: "'Poppins', sans-serif", fontWeight: 900,
           fontSize: 'clamp(2rem, 7vw, 2.8rem)',
           color: '#D62B2B', lineHeight: 1,
           marginBottom: '0.5rem',
@@ -763,7 +763,7 @@ function CounterCard({ icon, value, display, label, active }) {
       </div>
       <div
         style={{
-          fontFamily: "'Nunito', sans-serif", fontWeight: 700,
+          fontFamily: "'Poppins', sans-serif", fontWeight: 700,
           fontSize: '0.95rem', color: '#555',
         }}
       >
@@ -784,7 +784,7 @@ function Metricas() {
         <FadeIn>
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 900,
               fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', color: '#1A1A1A',
               textAlign: 'center', marginBottom: '0.4rem',
             }}
@@ -793,7 +793,7 @@ function Metricas() {
           </h2>
           <p
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 700,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
               color: '#999', textAlign: 'center', marginBottom: '2.8rem',
             }}
           >
@@ -817,7 +817,7 @@ function Metricas() {
         <FadeIn delay={300}>
           <p
             style={{
-              fontFamily: "'Nunito', sans-serif", fontSize: '0.82rem',
+              fontFamily: "'Poppins', sans-serif", fontSize: '0.82rem',
               color: '#bbb', fontStyle: 'italic',
               textAlign: 'center', marginTop: '1.5rem',
             }}
@@ -846,7 +846,7 @@ function Roadmap() {
         <FadeIn>
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 900,
               fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', color: '#1A1A1A',
               textAlign: 'center', marginBottom: '0.4rem',
             }}
@@ -855,7 +855,7 @@ function Roadmap() {
           </h2>
           <p
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 700,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
               color: '#666', textAlign: 'center', marginBottom: '3rem',
             }}
           >
@@ -913,7 +913,7 @@ function Roadmap() {
                   >
                     <p
                       style={{
-                        fontFamily: "'Nunito', sans-serif", fontWeight: 800,
+                        fontFamily: "'Poppins', sans-serif", fontWeight: 800,
                         color: item.status === 'future' ? '#888' : '#1A1A1A',
                         fontSize: '0.97rem', marginBottom: '2px',
                       }}
@@ -922,7 +922,7 @@ function Roadmap() {
                     </p>
                     <p
                       style={{
-                        fontFamily: "'Nunito', sans-serif", fontWeight: 700,
+                        fontFamily: "'Poppins', sans-serif", fontWeight: 700,
                         color: STATUS_DOT[item.status],
                         fontSize: '0.8rem',
                       }}
@@ -982,7 +982,7 @@ function Contacto() {
         <FadeIn>
           <h2
             style={{
-              fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+              fontFamily: "'Poppins', sans-serif", fontWeight: 900,
               fontSize: 'clamp(1.9rem, 5.5vw, 2.9rem)', color: '#fff',
               marginBottom: '1rem',
             }}
@@ -991,7 +991,7 @@ function Contacto() {
           </h2>
           <p
             style={{
-              fontFamily: "'Nunito', sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
               color: 'rgba(255,255,255,0.88)',
               lineHeight: 1.7,
@@ -1017,7 +1017,7 @@ function Contacto() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
                 background: '#25D366', color: '#fff',
-                fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+                fontFamily: "'Poppins', sans-serif", fontWeight: 900,
                 fontSize: '1.05rem',
                 padding: '1rem 2.2rem', borderRadius: '999px',
                 textDecoration: 'none', width: 'fit-content',
@@ -1044,7 +1044,7 @@ function Contacto() {
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '10px',
                 background: '#fff', color: '#D62B2B',
-                fontFamily: "'Nunito', sans-serif", fontWeight: 900,
+                fontFamily: "'Poppins', sans-serif", fontWeight: 900,
                 fontSize: '1.05rem',
                 padding: '1rem 2.2rem', borderRadius: '999px',
                 textDecoration: 'none', width: 'fit-content',
@@ -1087,7 +1087,7 @@ function Footer() {
         background: '#1A1A1A',
         padding: '1.5rem 1rem',
         textAlign: 'center',
-        fontFamily: "'Nunito', sans-serif",
+        fontFamily: "'Poppins', sans-serif",
         fontSize: '0.88rem',
         color: '#777',
       }}
