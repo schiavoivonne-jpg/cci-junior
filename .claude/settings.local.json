@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth *)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "PowerShell(gh --version 2>$null)",
+      "PowerShell(if \\(-not $?\\) { \"gh \\(GitHub CLI\\) no instalado\" })",
+      "Bash(npm install *)"
+    ]
+  }
+}

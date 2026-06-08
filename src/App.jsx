@@ -392,7 +392,6 @@ function Hero() {
     <section
       id="hero"
       style={{
-        background: '#F0E060',
         paddingTop: '56px',
         minHeight: '100svh',
         display: 'flex',
@@ -552,7 +551,7 @@ function SobreIvi() {
   ]
 
   return (
-    <section id="sobre" style={{ background: '#F0E060', padding: '5rem 1rem' }}>
+    <section id="sobre" style={{ padding: '5rem 1rem' }}>
       <FadeIn>
         <div style={{ maxWidth: '520px', margin: '0 auto' }}>
           <div
@@ -644,7 +643,7 @@ function SobreIvi() {
 ═══════════════════════════════════════════════════════════════ */
 function TikTokVideos() {
   return (
-    <section id="videos" style={{ background: '#F5C518', padding: '5rem 1rem' }}>
+    <section id="videos" style={{ padding: '5rem 1rem' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         <FadeIn>
           <h2
@@ -782,7 +781,7 @@ function Metricas() {
   const { metrics } = CONSTANTS
 
   return (
-    <section id="metricas" style={{ background: '#fff', padding: '5rem 1rem' }}>
+    <section id="metricas" style={{ padding: '5rem 1rem' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto' }}>
         <FadeIn>
           <h2
@@ -844,7 +843,7 @@ const STATUS_DOT = {
 
 function Roadmap() {
   return (
-    <section id="roadmap" style={{ background: '#F0E060', padding: '5rem 1rem' }}>
+    <section id="roadmap" style={{ padding: '5rem 1rem' }}>
       <div style={{ maxWidth: '560px', margin: '0 auto' }}>
         <FadeIn>
           <h2

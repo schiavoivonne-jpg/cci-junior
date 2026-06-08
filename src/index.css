@@ -17,7 +17,15 @@ html {
 body {
   font-family: 'Nunito', sans-serif;
   color: #1A1A1A;
-  background: #FFFFFF;
+  background-color: #FDFDE8;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #FFFFF5 0px,
+    #FFFFF5 70px,
+    #F0ECC0 70px,
+    #F0ECC0 140px
+  );
+  background-attachment: fixed;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
