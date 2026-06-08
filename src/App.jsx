@@ -229,9 +229,7 @@ function FadeIn({ children, delay = 0, className = '', up = true }) {
    COMPONENTE: NAVEGACIÓN
 ═══════════════════════════════════════════════════════════════ */
 const NAV_LINKS = [
-  { label: 'Inicio',    href: '#hero'     },
-  { label: 'Sobre mí', href: '#sobre'     },
-  { label: 'Videos',   href: '#videos'    },
+  { label: '你好!',     href: '#hero'     },
   { label: 'Métricas', href: '#metricas'  },
   { label: 'Roadmap',  href: '#roadmap'   },
   { label: 'Contacto', href: '#contacto'  },
@@ -1112,8 +1110,6 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <SobreIvi />
-        <TikTokVideos />
         <Metricas />
         <Roadmap />
         <Contacto />
