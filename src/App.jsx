@@ -7,24 +7,21 @@ import { useState, useEffect, useRef } from 'react'
 const CONSTANTS = {
   metrics: {
     views: {
-      value: 1200000,
-      display: '1.2M+',
+      value: 830000,
+      display: '830K',
       label: 'Vistas en TikTok',
-      icon: '👁',
     },
     database: {
-      value: 340,
-      display: '340',
-      label: 'Base de datos',
-      icon: '🗃',
+      value: 426,
+      display: '426',
+      label: 'Mails en base de datos',
     },
     conversations: {
-      value: 180,
-      display: '180',
-      label: 'Conversaciones iniciadas',
-      icon: '💬',
+      value: 80,
+      display: '80',
+      label: 'Leads de padres',
     },
-    lastUpdated: 'Mayo 2025',
+    lastUpdated: 'Junio 2025',
   },
 
   tiktok: {
@@ -399,13 +396,21 @@ function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/*
-        Layout en grid 2 columnas:
-        Col izq: "El" arriba, "es un" abajo
-        Col der: pill arriba, card amarilla abajo
-      */}
+      {/* Wrapper hero: texto izq + avatar der */}
       <div style={{
         position: 'relative', zIndex: 2,
+        display: 'flex',
+        alignItems: 'flex-end',
+        justifyContent: 'center',
+        gap: '0',
+        width: '100%',
+        maxWidth: '480px',
+        margin: '0 auto',
+        padding: '3rem 1.5rem 2rem',
+      }}>
+
+        {/* Bloque de texto en grid 2x2 */}
+        <div style={{
         display: 'grid',
         gridTemplateColumns: 'auto 1fr',
         gridTemplateRows: 'auto auto',
@@ -513,7 +518,22 @@ function Hero() {
           </svg>
         </div>
 
-      </div>
+        </div>{/* fin grid texto */}
+
+        {/* Avatar parada saludando */}
+        <img
+          src="/ivi-standing.png"
+          alt="Ivi"
+          style={{
+            width: '130px',
+            objectFit: 'contain',
+            flexShrink: 0,
+            marginBottom: '-2rem',
+            marginLeft: '-10px',
+          }}
+        />
+
+      </div>{/* fin wrapper hero */}
     </section>
   )
 }
@@ -755,55 +775,163 @@ function CounterCard({ icon, value, display, label, active }) {
 
 function Metricas() {
   const ref = useRef(null)
-  const active = useOnScreen(ref, 0.3)
+  const active = useOnScreen(ref, 0.2)
   const { metrics } = CONSTANTS
 
-  return (
-    <section id="metricas" style={{ padding: '5rem 1rem' }}>
-      <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-        <FadeIn>
-          <h2
-            style={{
-              fontFamily: "'Poppins', sans-serif", fontWeight: 900,
-              fontSize: 'clamp(1.8rem, 5vw, 2.8rem)', color: '#1A1A1A',
-              textAlign: 'center', marginBottom: '0.4rem',
-            }}
-          >
-            El recorrido en números
-          </h2>
-          <p
-            style={{
-              fontFamily: "'Poppins', sans-serif", fontWeight: 700,
-              color: '#999', textAlign: 'center', marginBottom: '2.8rem',
-            }}
-          >
-            Desde cero hasta acá, paso a paso
-          </p>
-        </FadeIn>
+  const cards = [
+    { ...metrics.views,         avatar: true },
+    { ...metrics.database,      avatar: false },
+    { ...metrics.conversations, avatar: false },
+  ]
 
+  const icons = [
+    /* envelope */
+    <svg width="28" height="22" viewBox="0 0 28 22" fill="none"><rect x="1" y="1" width="26" height="20" rx="3" fill="white" opacity="0.9"/><path d="M1 4L14 13L27 4" stroke="#D62B2B" strokeWidth="2" strokeLinecap="round"/></svg>,
+    /* mail */
+    <svg width="28" height="22" viewBox="0 0 28 22" fill="none"><rect x="1" y="1" width="26" height="20" rx="3" fill="white" opacity="0.9"/><path d="M1 4L14 13L27 4" stroke="#D62B2B" strokeWidth="2" strokeLinecap="round"/></svg>,
+    /* chat */
+    <svg width="28" height="26" viewBox="0 0 28 26" fill="none"><rect x="1" y="1" width="26" height="20" rx="4" fill="white" opacity="0.9"/><path d="M8 26L10 21H1" fill="white" opacity="0.9"/><circle cx="9" cy="11" r="2" fill="#D62B2B"/><circle cx="14" cy="11" r="2" fill="#D62B2B"/><circle cx="19" cy="11" r="2" fill="#D62B2B"/></svg>,
+  ]
+
+  return (
+    <section id="metricas" style={{ padding: '4rem 1rem 3rem' }}>
+      <div style={{ maxWidth: '500px', margin: '0 auto', position: 'relative' }}>
+
+        {/* Avatar moto — encima de la primera card */}
+        <img
+          src="/ivi-moto.png"
+          alt="Ivi en moto"
+          style={{
+            position: 'absolute',
+            left: '-8px',
+            top: '-80px',
+            width: '110px',
+            objectFit: 'contain',
+            zIndex: 10,
+            pointerEvents: 'none',
+          }}
+        />
+
+        {/* 3 cards */}
         <div
           ref={ref}
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '1.2rem',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '10px',
           }}
         >
-          <CounterCard {...metrics.views}         active={active} />
-          <CounterCard {...metrics.database}      active={active} />
-          <CounterCard {...metrics.conversations} active={active} />
+          {cards.map((card, i) => (
+            <FadeIn key={i} delay={i * 100}>
+              <MetricCard
+                {...card}
+                icon={icons[i]}
+                active={active}
+                isFirst={i === 0}
+              />
+            </FadeIn>
+          ))}
         </div>
 
-        <FadeIn delay={300}>
-          <p
-            style={{
-              fontFamily: "'Poppins', sans-serif", fontSize: '0.82rem',
-              color: '#bbb', fontStyle: 'italic',
-              textAlign: 'center', marginTop: '1.5rem',
-            }}
-          >
-            Métricas actualizadas manualmente — última actualización: {metrics.lastUpdated}
-          </p>
+        <p style={{
+          fontFamily: "'Poppins', sans-serif", fontSize: '0.75rem',
+          color: '#bbb', fontStyle: 'italic',
+          textAlign: 'center', marginTop: '1rem',
+        }}>
+          Actualizado: {metrics.lastUpdated}
+        </p>
+      </div>
+    </section>
+  )
+}
+
+function MetricCard({ value, display, label, icon, active, isFirst }) {
+  const raw = useCountUp(value, 1800, active)
+  const formatted =
+    value >= 1_000_000 ? (raw / 1_000_000).toFixed(1) + 'M+'
+    : value >= 1000    ? Math.floor(raw / 1000) + 'K'
+    : raw.toString()
+
+  return (
+    <div style={{
+      borderRadius: '1rem',
+      border: '2.5px solid #1A1A1A',
+      overflow: 'hidden',
+      background: '#fff',
+    }}>
+      {/* Header con gradiente */}
+      <div style={{
+        background: isFirst
+          ? 'linear-gradient(135deg, #F5C518 0%, #E8731A 100%)'
+          : 'linear-gradient(135deg, #E8731A 0%, #D62B2B 100%)',
+        padding: '0.6rem 0',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '48px',
+      }}>
+        {icon}
+      </div>
+
+      {/* Body */}
+      <div style={{ padding: '0.7rem 0.5rem', textAlign: 'center' }}>
+        <div style={{
+          fontFamily: "'Poppins', sans-serif", fontWeight: 900,
+          fontSize: 'clamp(1.5rem, 5.5vw, 2rem)',
+          color: '#D62B2B', lineHeight: 1,
+          marginBottom: '4px',
+        }}>
+          {active ? formatted : '–'}
+        </div>
+        <div style={{
+          fontFamily: "'Poppins', sans-serif", fontWeight: 500,
+          fontSize: 'clamp(0.62rem, 2.2vw, 0.75rem)',
+          color: '#444', lineHeight: 1.3,
+        }}>
+          {label}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SECCIÓN: VIDEO
+═══════════════════════════════════════════════════════════════ */
+function VideoSection() {
+  return (
+    <section style={{ padding: '1rem 1rem 3rem' }}>
+      <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+        <FadeIn>
+          <div style={{
+            background: 'linear-gradient(135deg, #F5C518 0%, #E8731A 50%, #D62B2B 100%)',
+            borderRadius: '1.4rem',
+            border: '2.5px solid #1A1A1A',
+            padding: '1.5rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '260px',
+          }}>
+            {/* Video autoplay muted loop */}
+            <video
+              src="/video.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                width: '48%',
+                maxWidth: '200px',
+                borderRadius: '1.2rem',
+                background: '#fff',
+                objectFit: 'cover',
+                aspectRatio: '9/16',
+                display: 'block',
+                boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+              }}
+            />
+          </div>
         </FadeIn>
       </div>
     </section>
@@ -1091,6 +1219,7 @@ export default function App() {
       <main>
         <Hero />
         <Metricas />
+        <VideoSection />
         <Roadmap />
         <Contacto />
       </main>
